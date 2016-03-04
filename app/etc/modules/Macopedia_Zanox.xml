@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Macopedia_Zanox>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Macopedia_Zanox>
+    </modules>
+</config>

@@ -1,0 +1,26 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php $_code = $_helper->getConfigCode('basket'); ?>
+<?php if ($_code) : ?>
+	<?php echo $this->getLayout()->createBlock('core/template')
+		->setTemplate('macopedia/zanox/script.phtml')
+		->setZanoxCode($_code)
+		->tohtml();
+	?>
+	<?php $_quoteItemsInfo = $_helper->getQuoteItemsInfo(); ?>
+	<?php if (!empty($_quoteItemsInfo)) : ?>
+		<script type="text/javascript">
+			var zx_products = [
+				<?php foreach ($_quoteItemsInfo as $_item): ?>
+				{
+					"identifier": "<?php echo $_item['id']; ?>",
+					"amount": "<?php echo $_item['amount']; ?>",
+					"currency": "<?php echo $_item['currency_code']; ?>",
+					"quantity": "<?php echo $_item['qty']; ?>"
+
+				},
+				<?php endforeach; ?>
+			];
+			var zx_language = "<?php echo $_helper->getLocaleCode(); ?>";
+		</script>
+	<?php endif; ?>
+<?php endif; ?>

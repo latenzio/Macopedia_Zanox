@@ -1,0 +1,21 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php echo $this->getLayout()->createBlock('core/template')
+	->setTemplate('macopedia/zanox/script.phtml')
+	->setZanoxCode($_helper->getConfigCode('product'))
+	->tohtml();
+?>
+<?php $_product = Mage::registry('current_product'); ?>
+<?php if (!empty($_product->getData())) : ?>
+	<script type="text/javascript">
+		var zx_identifier = "<?php echo $_product->getId(); ?>";
+		var zx_fn = "<?php echo $_product->getName(); ?>";
+		var zx_description = "<?php echo $_product->getShortDescription(); ?>";
+		<?php /*var zx_category = "<?php echo $_product->getId(); ?>"; */?>
+		<?php /*var zx_brand = "<?php echo $_product->getId(); ?>"; */?>
+		var zx_price = "<?php echo $_product->getPrice(); ?>";
+		var zx_currency = "<?php echo Mage::app()->getStore()->getCurrentCurrencyCode(); ?>";
+		var zx_url = "<?php echo $_product->getProductUrl(); ?>";
+		var zx_photo = "<?php echo $_product->getImageUrl(); ?>";
+		var zx_language = "<?php echo $_helper->getLocaleCode(); ?>"
+	</script>
+<?php endif; ?>

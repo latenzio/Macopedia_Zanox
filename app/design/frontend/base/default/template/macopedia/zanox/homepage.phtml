@@ -1,0 +1,9 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php $_code = $_helper->getConfigCode('homepage'); ?>
+<?php if ($_code) : ?>
+    <?php echo $this->getLayout()->createBlock('core/template')
+        ->setTemplate('macopedia/zanox/script.phtml')
+        ->setZanoxCode($_code)
+        ->tohtml();
+    ?>
+<?php endif; ?>

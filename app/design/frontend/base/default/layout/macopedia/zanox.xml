@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="before_body_end">
+            <block type="macopedia_zanox/zanox" name="zanox.generic" template="macopedia/zanox/generic.phtml" />
+        </reference>
+    </default>
+
+    <cms_index_index>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type=" macopedia_zanox/zanox" name="zanox.home" template="macopedia/zanox/homepage.phtml" />
+        </reference>
+    </cms_index_index>
+
+    <catalog_category_default>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.category" template="macopedia/zanox/category.phtml" />
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.category" template="macopedia/zanox/category.phtml" />
+        </reference>
+    </catalog_category_layered>
+
+    <catalogsearch_result_index>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.search" template="macopedia/zanox/search.phtml" />
+        </reference>
+    </catalogsearch_result_index>
+
+    <checkout_cart_index>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.basket" template="macopedia/zanox/basket.phtml" />
+        </reference>
+    </checkout_cart_index>
+
+    <catalog_product_view>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.product" template="macopedia/zanox/product.phtml" />
+        </reference>
+    </catalog_product_view>
+
+    <customer_account_create>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.registration" template="macopedia/zanox/registration.phtml" />
+        </reference>
+    </customer_account_create>
+
+    <checkout_onepage_success>
+        <reference name="head">
+            <block type="macopedia_zanox/zanox" name="zanox.sale" template="macopedia/zanox/sale.phtml" />
+        </reference>
+        <reference name="before_body_end">
+            <remove name="zanox.generic" />
+            <block type="macopedia_zanox/zanox" name="zanox.success" template="macopedia/zanox/success.phtml" />
+        </reference>
+    </checkout_onepage_success>
+
+</layout>

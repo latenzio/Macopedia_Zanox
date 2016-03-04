@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <macopedia translate="label" module="macopedia_zanox">
+            <label>Macopedia</label>
+            <sort_order>10</sort_order>
+        </macopedia>
+    </tabs>
+    <sections>
+        <macopedia_zanox translate="label" module="macopedia_zanox">
+            <label>Zanox integration</label>
+            <tab>macopedia</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <zanox_tags translate="label">
+                    <label>Zanox Tags</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable Zanox tags</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <sale_code>
+                            <label>Sale Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[This code is required]]></comment>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sale_code>
+                        <partner_id>
+                            <label>Product Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[This code is required]]></comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </partner_id>
+                        <checkout_code>
+                            <label>Checkout Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[This code is required]]></comment>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </checkout_code>
+                        <basket_code>
+                            <label>Basket Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[This code is required]]></comment>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </basket_code>
+                        <generic_code>
+                            <label>Generic Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Leave blank to disable]]></comment>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </generic_code>
+                        <homepage_code>
+                            <label>Homepage Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Leave blank to disable]]></comment>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </homepage_code>
+                        <category_code>
+                            <label>Category Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Leave blank to disable]]></comment>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_code>
+                        <search_code>
+                            <label>Search Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Leave blank to disable]]></comment>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_code>
+                        <registration_code>
+                            <label>Registration Page Mastertag Code</label>
+                            <frontend_type>text</frontend_type>
+                            <comment><![CDATA[Leave blank to disable]]></comment>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </registration_code>
+                    </fields>
+                </zanox_tags>
+            </groups>
+        </macopedia_zanox>
+    </sections>
+</config>

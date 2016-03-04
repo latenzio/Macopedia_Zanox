@@ -1,0 +1,16 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php $_code = $_helper->getConfigCode('search'); ?>
+<?php if ($_code) : ?>
+	<?php echo $this->getLayout()->createBlock('core/template')
+		->setTemplate('macopedia/zanox/script.phtml')
+		->setZanoxCode($_code)
+		->tohtml();
+	?>
+	<?php $_searchHelper = Mage::helper('catalogsearch'); ?>
+	<?php if ($_searchHelper): ?>
+		<script type="text/javascript">
+			var zx_search_query = "<?php echo $_searchHelper->getEscapedQueryText(); ?>";
+		</script>
+	<?php endif; ?>
+<?php endif; ?>
+

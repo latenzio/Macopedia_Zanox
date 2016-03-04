@@ -1,0 +1,9 @@
+# app/code
+app/code/local/Macopedia/Zanox            app/code/local/Macopedia/Zanox
+# app/etc
+app/etc/modules/Macopedia_Zanox.xml            app/etc/modules/Macopedia_Zanox.xml
+# app/locale
+app/locale/pl_PL/Macopedia_Zanox.csv            app/locale/pl_PL/Macopedia_Zanox.csv
+# app/design
+app/design/frontend/base/default/template/macopedia/zanox   app/design/frontend/base/default/template/macopedia/zanox
+app/design/frontend/base/default/layout/macopedia/zanox.xml            app/design/frontend/base/default/layout/macopedia/zanox.xml

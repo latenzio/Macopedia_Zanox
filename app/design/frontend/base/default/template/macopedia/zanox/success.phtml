@@ -1,0 +1,27 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php echo $this->getLayout()->createBlock('core/template')
+	->setTemplate('macopedia/zanox/script.phtml')
+	->setZanoxCode($_helper->getConfigCode('checkout'))
+	->tohtml();
+?>
+<?php $_lastOrderInfo = $_helper->getLastOrderInfo(); ?>
+<?php $_lastOrderItemsInfo = $_helper->getLastOrderItemsInfo(); ?>
+
+<?php if (!empty($_lastOrderInfo)) : ?>
+	<script type="text/javascript">
+	var zx_products = [
+		<?php foreach ($_lastOrderItemsInfo as $_item): ?>
+		{
+			"identifier": "<?php echo $_item['id']; ?>",
+			"amount": "<?php echo $_item['amount']; ?>",
+			"currency": "<?php echo $_item['currency_code']; ?>",
+			"quantity": "<?php echo $_item['qty']; ?>"
+		},
+		<?php endforeach; ?>
+	];
+	var zx_transaction = "<?php echo $_lastOrderInfo['real_order_id']; ?>";
+	var zx_total_amount = "<?php echo round($_lastOrderInfo['grand_total']); ?>";
+	var zx_total_currency = "<?php echo $_lastOrderInfo['currency_code']; ?>";
+	var zx_language = "<?php echo $_lastOrderInfo['country_code']; ?>";
+	</script>
+<?php endif; ?> 

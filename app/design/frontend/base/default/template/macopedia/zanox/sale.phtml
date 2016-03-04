@@ -1,0 +1,17 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php $_code = $_helper->getConfigCode('sale'); ?>
+<?php echo $this->getLayout()->createBlock('core/template')
+    ->setTemplate('macopedia/zanox/script.phtml')
+    ->setZanoxCode($_code)
+    ->tohtml();
+?>
+<?php $_lastOrderInfo = $_helper->getLastOrderInfo(); ?>
+<?php $_partnerId = Mage::getSingleton('core/session')->getZanoxId(); ?>
+
+<?php if (!empty($_lastOrderInfo)) : ?>
+    <script type="text/javascript" src="https://ad.zanox.com/pps/?<?php echo $_code ?>&mode=[[1]]&CustomerID=[[<?php echo $_lastOrderInfo['customer_id']; ?>]]&OrderID=[[<?php echo $_lastOrderInfo['real_order_id']; ?>]]&CurrencySymbol=[[<?php echo $_lastOrderInfo['currency_code']; ?>]]&TotalPrice=[[<?php echo $_lastOrderInfo['grand_total']; ?>]]&PartnerID=[[<?php echo $_partnerId; ?>]]">
+    </script>
+    <noscript>
+    <img src="https://ad.zanox.com/pps/?<?php echo $_code ?>&mode=[[2]]&CustomerID=[[<?php echo $_lastOrderInfo['customer_id']; ?>]]&OrderID=[[<?php echo $_lastOrderInfo['real_order_id']; ?>]]&CurrencySymbol=[[<?php echo $_lastOrderInfo['currency_code']; ?>]]&TotalPrice=[[<?php echo $_lastOrderInfo['grand_total']; ?>]]&PartnerID=[[<?php echo $_partnerId; ?>]]" width="1" height="1" />
+    </noscript>
+<?php endif; ?>

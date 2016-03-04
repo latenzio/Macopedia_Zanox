@@ -1,0 +1,15 @@
+<?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php $_code = $_helper->getConfigCode('category'); ?>
+<?php if ($_code) : ?>
+	<?php $_category = Mage::registry('current_category'); ?>
+	<?php echo $this->getLayout()->createBlock('core/template')
+		->setTemplate('macopedia/zanox/script.phtml')
+		->setZanoxCode($_code)
+		->tohtml();
+	?>
+	<?php if ($_category): ?>
+		<script type="text/javascript">
+			var zx_category = "<?php echo $_category->getName(); ?>";
+		</script>
+	<?php endif; ?>
+<?php endif; ?>
