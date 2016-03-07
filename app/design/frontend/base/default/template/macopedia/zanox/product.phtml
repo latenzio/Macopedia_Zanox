@@ -1,11 +1,12 @@
 <?php $_helper = Mage::helper('macopedia_zanox'); ?>
+<?php $_code = $_helper->getConfigCode('product'); ?>
 <?php echo $this->getLayout()->createBlock('core/template')
 	->setTemplate('macopedia/zanox/script.phtml')
-	->setZanoxCode($_helper->getConfigCode('product'))
+	->setZanoxCode($_code)
 	->tohtml();
 ?>
 <?php $_product = Mage::registry('current_product'); ?>
-<?php if (!empty($_product->getData())) : ?>
+<?php if (!empty($_product->getData()) && $_code) : ?>
 	<script type="text/javascript">
 		var zx_identifier = "<?php echo $_product->getId(); ?>";
 		var zx_fn = "<?php echo $_product->getName(); ?>";

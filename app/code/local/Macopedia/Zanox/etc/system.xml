@@ -42,7 +42,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </sale_code>
-                        <partner_id>
+                        <product_code>
                             <label>Product Page Mastertag Code</label>
                             <frontend_type>text</frontend_type>
                             <comment><![CDATA[This code is required]]></comment>
@@ -50,7 +50,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </partner_id>
+                        </product_code>
                         <checkout_code>
                             <label>Checkout Page Mastertag Code</label>
                             <frontend_type>text</frontend_type>
