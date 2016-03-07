@@ -28,12 +28,9 @@ class Macopedia_Zanox_Helper_Data extends Mage_Core_Helper_Abstract
         return strtolower(substr(Mage::getStoreConfig('general/locale/code', Mage::app()->getStore()->getId()), 0, 2));
     }
 
-    /**
-     * @return int
-     */
-    public function getStoreId()
+    public function getStore()
     {
-        return Mage::app()->getStore()->getId();
+        return Mage::app()->getStore();
     }
 
     public function setLastOrderData()
@@ -47,12 +44,13 @@ class Macopedia_Zanox_Helper_Data extends Mage_Core_Helper_Abstract
         if(!$this->lastRealOrderId) {
             $this->setLastOrderData();
         }
+
         return array(
             'order_id' => $this->lastOrder->getId(),
             'real_order_id'=> $this->lastOrder->getIncrementId(),
-            'customer_id' => $this->lastOrder->getCustomerId(),
-            'grand_total' => number_format($this->lastOrder->getGrandTotal(), 2, '.', ''),
-            'currency_code' => Mage::app()->getStore()->getCurrentCurrencyCode(),
+            'customer_id' => $this->lastOrder->getIncrementId(),
+            'grand_total' => number_format($this->getStore()->convertPrice($this->lastOrder->getGrandTotal()), 2, '.', ''),
+            'currency_code' => $this->getStore()->getCurrentCurrencyCode(),
             'country_code' => $this->getLocaleCode()
         );
     }
@@ -74,12 +72,12 @@ class Macopedia_Zanox_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getItemsInfo($items)
     {
-        $currencyCode = Mage::app()->getStore()->getCurrentCurrencyCode();
+        $currencyCode = $this->getStore()->getCurrentCurrencyCode();
         $itemsInfo = array();
         foreach ($items as $item) {
             array_push($itemsInfo, array(
                 'id' => $item->getProduct()->getId(),
-                'amount' => number_format($item->getProduct()->getPrice(), 2, '.', ''),
+                'amount' => number_format($this->getStore()->convertPrice($item->getProduct()->getPrice()), 2, '.', ''),
                 'currency_code' => $currencyCode,
                 'qty' => $item->getQty()
             ));
