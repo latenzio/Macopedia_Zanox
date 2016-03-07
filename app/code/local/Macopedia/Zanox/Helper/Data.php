@@ -49,7 +49,7 @@ class Macopedia_Zanox_Helper_Data extends Mage_Core_Helper_Abstract
             'order_id' => $this->lastOrder->getId(),
             'real_order_id'=> $this->lastOrder->getIncrementId(),
             'customer_id' => $this->lastOrder->getIncrementId(),
-            'grand_total' => number_format($this->getStore()->convertPrice($this->lastOrder->getGrandTotal()), 2, '.', ''),
+            'grand_total' => number_format($this->lastOrder->getGrandTotal(), 2, '.', ''),
             'currency_code' => $this->getStore()->getCurrentCurrencyCode(),
             'country_code' => $this->getLocaleCode()
         );
