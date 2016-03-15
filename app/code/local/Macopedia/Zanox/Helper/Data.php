@@ -79,7 +79,7 @@ class Macopedia_Zanox_Helper_Data extends Mage_Core_Helper_Abstract
                 'id' => $item->getProduct()->getId(),
                 'amount' => number_format($this->getStore()->convertPrice($item->getProduct()->getPrice()), 2, '.', ''),
                 'currency_code' => $currencyCode,
-                'qty' => $item->getQty()
+                'qty' => ($item->getQty() !== null) ? $item->getQty() : $item->getQtyOrdered(),
             ));
         }
         return $itemsInfo;
