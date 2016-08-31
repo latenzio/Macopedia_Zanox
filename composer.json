@@ -1,0 +1,12 @@
+{
+    "name": "macopedia/Macopedia_Zanox",
+    "type": "magento-module",
+    "description": "Module for adding Zanox MasterTag and Zanox Pixel",
+    "license": "proprietary",
+    "authors": [{
+        "name": "Macopedia"
+    }],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
