@@ -7,10 +7,6 @@
         "name": "Macopedia"
     }],
     "require": {
-        "vaimo / magento": "*",
-        "magento - hackathon / magento - composer - installer": "*"
-    },
-    "extra": {
-        "vaimo - module - category": "other"
+        "magento-hackathon/magento-composer-installer": "*"
     }
 }
